@@ -376,7 +376,7 @@ extern "C" HRESULT PlanDefaultPackageRequestState(
             break;
         }
     }
-    else if (BOOTSTRAPPER_ACTION_CACHE != BOOTSTRAPPER_ACTION_UNINSTALL && BOOTSTRAPPER_RELATION_PATCH == relationType && BURN_PACKAGE_TYPE_MSP == packageType)
+    else if (BOOTSTRAPPER_ACTION_UNINSTALL != action && BOOTSTRAPPER_ACTION_UNSAFE_UNINSTALL != action && BOOTSTRAPPER_RELATION_PATCH == relationType && BURN_PACKAGE_TYPE_MSP == packageType)
     {
         // For patch related bundles, only install a patch if currently absent during install, modify, or repair.
         if (BOOTSTRAPPER_PACKAGE_STATE_ABSENT != currentState)
